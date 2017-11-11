@@ -1,41 +1,9 @@
 import React from 'react';
 import Types from 'prop-types';
 import browserInfo from './browserInfo';
+import defaultStyles, { mergeStyles } from './styles';
+import Collapsible from './Collapsible';
 
-const containerStyles = {
-  color: 'black',
-  fontSize: '1rem',
-  textAlign: 'left',
-  whiteSpace: 'pre-line',
-};
-
-const errorStyles = {
-  cursor: 'pointer',
-  margin: '0',
-};
-
-const componentStackStyles = {
-  fontSize: '.8rem',
-  margin: '0',
-  overflow: 'scroll',
-  transition: 'max-height .3s ease',
-};
-
-const browserInfoStyles = {
-  fontWeight: 'normal',
-};
-
-const arrowStyles = {
-  borderStyle: 'solid',
-  borderWidth: '0 5px 5px 5px',
-  borderColor: 'transparent transparent black transparent',
-  display: 'inline-block',
-  height: '0',
-  margin: 'auto auto auto 5px',
-  transition: 'transform .3s ease',
-  width: '0',
-  verticalAlign: 'middle',
-};
 
 class ErrorMessage extends React.Component {
   constructor(props) {
@@ -51,23 +19,22 @@ class ErrorMessage extends React.Component {
   }
 
   render() {
+    const { isExpanded } = this.state;
     const { error, info } = this.props;
+
+    const styles = mergeStyles(defaultStyles, this.props.customStyles);
     return (
-      <div style={containerStyles}>
-        <h5 style={errorStyles} onClick={this.toggleIsExpanded}>
+      <div style={styles.container}>
+        <h5 style={styles.errorMessage} onClick={this.toggleIsExpanded}>
           {error.toString()}
-          <span style={browserInfoStyles}>({`${browserInfo.name} ${browserInfo.version}`})</span>
-          <div style={{
-            ...arrowStyles,
-            transform: this.state.isExpanded ? 'rotate(180deg)' : '',
-          }} />
+          <span style={styles.browserInfo}>({`${browserInfo.name} ${browserInfo.version}`})</span>
+          <div style={isExpanded ? { ...styles.arrow, transform: 'rotate(180deg)' } : styles.arrow} />
         </h5>
-        <div style={{
-          ...componentStackStyles,
-          maxHeight: this.state.isExpanded ? '250px' : '0',
-        }}>
-          {info.componentStack.trim()}
-        </div>
+        <Collapsible isExpanded={isExpanded}>
+          <div style={styles.componentStack}>
+            {info.componentStack.trim()}
+          </div>
+        </Collapsible>
       </div>
     );
   }
@@ -78,6 +45,13 @@ ErrorMessage.propTypes = {
   info: Types.shape({
     componentStack: Types.string.isRequired,
   }).isRequired,
+  customStyles: Types.shape({
+    container: Types.object,
+    errorMessage: Types.object,
+    componentStack: Types.object,
+    browserInfo: Types.object,
+    arrow: Types.object,
+  }),
 };
 
 export default ErrorMessage;

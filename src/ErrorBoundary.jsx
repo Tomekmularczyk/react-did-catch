@@ -19,7 +19,7 @@ class ErrorBoundary extends React.Component {
 
   render() {
     const { error, info, hasError } = this.state;
-    const { render } = this.props;
+    const { render, customStyles } = this.props;
     if (hasError) {
       if (typeof (render) === 'function') {
         return render(error, info, browserInfo);
@@ -28,6 +28,7 @@ class ErrorBoundary extends React.Component {
           <ErrorMessage
             error={error}
             info={info}
+            customStyles={customStyles}
           />
         );
       }
@@ -39,6 +40,13 @@ class ErrorBoundary extends React.Component {
 
 ErrorBoundary.propTypes = {
   render: Types.func,
+  customStyles: Types.shape({
+    container: Types.object,
+    errorMessage: Types.object,
+    componentStack: Types.object,
+    browserInfo: Types.object,
+    arrow: Types.object,
+  }),
 };
 
 export default ErrorBoundary;

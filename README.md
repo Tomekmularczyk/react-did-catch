@@ -1,4 +1,5 @@
 # React Did Catch
+[see on npm](https://www.npmjs.com/package/react-did-catch)
 
 A simple component for React v.16 that catches javascript errors during rendering.
 Based on [React Error Boundaries.](https://reactjs.org/docs/error-boundaries.html)
@@ -39,7 +40,6 @@ Now if you click the button, *CatchError* will catch the error and by default re
 and stack-trace message.
 
 #### Custom component with `render` prop:
-
 ````javascript
 const SafeComponent = () => (
   <CatchError 
@@ -76,3 +76,52 @@ const SafeComponent = () => (
   </CatchError>
 );
 ````
+
+### Styling `ErrorMessage` component 
+Currently you can override default minimalistic styling using `customStyles` prop object with keys like: 
+* `container` 
+* `errorMessage` 
+* `componentStack` 
+* `browserInfo`
+* `arrow`
+ 
+````javascript
+const customStyles = {
+  arrow: {
+    borderColor: 'transparent transparent red',
+  },
+  container: {
+    border: '1px solid rgba(0,0,0,.1)',
+    padding: '15px',
+    width: '60%',
+  },
+  errorMessage: {
+    textAlign: 'center',
+  },
+  componentStack: {
+    color: 'red',
+    marginTop: '10px',
+    fontSize: '10px',
+    padding: '10px',
+    boxShadow: 'inset 0px 0px 10px 0px rgba(0,0,0,0.3)',
+  },
+  browserInfo: {
+    color: 'gray',
+  },
+};
+const SafeComponent = () => (
+  <CatchError customStyles={customStyles}>
+    <FailingComponent />
+  </CatchError>
+); 
+````
+
+Which will produce:
+![GitHub Logo](static/styled-error-message.png)
+
+You can also pass styles directly to `ErrorMessage`:
+
+````javascript
+<ErrorMessage error={error} info={info} customStyles={customStyles} />
+````
+
