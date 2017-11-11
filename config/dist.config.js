@@ -44,5 +44,21 @@ module.exports = {
         amd: 'react'
       }
     },
+    {
+      'prop-types': {
+        root: 'PropTypes',
+        commonjs2: 'prop-types',
+        commonjs: 'prop-types',
+        amd: 'prop-types'
+      }
+    },
+    {
+      'detect-browser': {
+        root: 'DetectBrowser',
+        commonjs2: 'detect-browser',
+        commonjs: 'detect-browser',
+        amd: 'detect-browser'
+      }
+    }
   ],
 };
