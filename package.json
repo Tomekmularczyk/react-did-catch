@@ -1,0 +1,39 @@
+{
+  "name": "react-did-catch",
+  "version": "0.1.0",
+  "description": "Simple error handling component for React v.16",
+  "repository": "https://github.com/Tomekmularczyk/react-did-catch.git",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "prepare": "webpack --config config/dist.config.js",
+    "dev": "webpack --config config/dist.config.js --progress --colors --watch"
+  },
+  "keywords": [
+    "react",
+    "catch",
+    "error",
+    "componentDidCatch",
+    "stacktrace"
+  ],
+  "author": "Tomek Mularczyk",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "react": "^16.1.0",
+    "webpack": "^3.8.1"
+  },
+  "peerDependencies": {
+    "react": "^16.x.x"
+  },
+  "dependencies": {
+    "detect-browser": "^2.0.0",
+    "prop-types": "^15.6.0"
+  }
+}
