@@ -1,4 +1,4 @@
-# react-did-catch
+# React Did Catch
 
 A simple component for React v.16 that catches javascript errors during rendering.
 Based on [React Error Boundaries.](https://reactjs.org/docs/error-boundaries.html)
@@ -56,7 +56,7 @@ const SafeComponent = () => (
 
 #### `ErrorMessage` component
 You can extract component responsible for printing error and stack-trace. It requires, two props
-(error and info) props from *componentDidCatch* hook.
+(error and info) props from [componentDidCatch](https://reactjs.org/docs/error-boundaries.html#componentdidcatch-parameters) hook.
 
 ````javascript
 import CatchError, { ErrorMessage } from 'react-did-catch';
