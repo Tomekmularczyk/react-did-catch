@@ -1,6 +1,6 @@
 {
   "name": "react-did-catch",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Simple error handling component for React v.16",
   "repository": "https://github.com/Tomekmularczyk/react-did-catch.git",
   "main": "lib/index.js",
