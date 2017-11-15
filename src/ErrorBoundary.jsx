@@ -4,13 +4,10 @@ import ErrorMessage from './ErrorMessage'
 import browserInfo from './browserInfo'
 
 class ErrorBoundary extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      error: null,
-      info: null,
-      hasError: false
-    }
+  state = {
+    error: null,
+    info: null,
+    hasError: false
   }
 
   componentDidCatch (error, info) {

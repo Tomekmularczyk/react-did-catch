@@ -5,17 +5,11 @@ import defaultStyles, { mergeStyles } from './styles'
 import Collapsible from './Collapsible'
 
 class ErrorMessage extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      isExpanded: false
-    }
-    this.toggleIsExpanded = this.toggleIsExpanded.bind(this)
+  state = {
+    isExpanded: false
   }
 
-  toggleIsExpanded () {
-    this.setState(prev => ({ isExpanded: !prev.isExpanded }))
-  }
+  toggleIsExpanded = () => this.setState(prev => ({ isExpanded: !prev.isExpanded }))
 
   render () {
     const { isExpanded } = this.state
