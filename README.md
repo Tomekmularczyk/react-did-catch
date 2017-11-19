@@ -1,5 +1,4 @@
-# React Did Catch
-[see on npm](https://www.npmjs.com/package/react-did-catch)
+# react-did-catch ![npm][npm-badge]
 
 A simple component for React v.16 that catches javascript errors during rendering.
 Based on [React Error Boundaries.](https://reactjs.org/docs/error-boundaries.html)
@@ -125,3 +124,6 @@ You can also pass styles directly to `ErrorMessage`:
 <ErrorMessage error={error} info={info} customStyles={customStyles} />
 ````
 
+
+
+[npm-badge]: https://badge.fury.io/js/react-did-catch.svg
