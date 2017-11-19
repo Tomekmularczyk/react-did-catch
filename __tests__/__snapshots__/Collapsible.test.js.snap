@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Collapsible /> matches snapshots 1`] = `
+<div
+  style={
+    Object {
+      "maxHeight": "0",
+      "overflow": "hidden",
+      "transition": "max-height .3s ease",
+    }
+  }
+>
+  children
+</div>
+`;
+
+exports[`<Collapsible /> matches snapshots 2`] = `
+<div
+  style={
+    Object {
+      "maxHeight": "250px",
+      "overflow": "hidden",
+      "transition": "max-height .3s ease",
+    }
+  }
+>
+  children
+</div>
+`;
