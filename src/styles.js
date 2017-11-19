@@ -3,23 +3,23 @@ const container = {
   fontSize: '1rem',
   textAlign: 'left',
   whiteSpace: 'pre-line',
-  margin: 'auto',
-};
+  margin: 'auto'
+}
 
 const errorMessage = {
   cursor: 'pointer',
-  margin: '0',
-};
+  margin: '0'
+}
 
 const componentStack = {
   fontSize: '.8rem',
   margin: '0',
-  overflow: 'scroll',
-};
+  overflow: 'scroll'
+}
 
 const browserInfo = {
-  fontWeight: 'normal',
-};
+  fontWeight: 'normal'
+}
 
 const arrow = {
   borderStyle: 'solid',
@@ -30,22 +30,22 @@ const arrow = {
   margin: 'auto auto auto 5px',
   transition: 'transform .3s ease',
   width: '0',
-  verticalAlign: 'middle',
-};
+  verticalAlign: 'middle'
+}
 
 const defaultStyles = {
   container,
   errorMessage,
   componentStack,
   browserInfo,
-  arrow,
-};
+  arrow
+}
 
-export default defaultStyles;
+export default defaultStyles
 
-export function mergeStyles(currentStyles, newStyles) {
+export function mergeStyles (currentStyles, newStyles) {
   if (!newStyles) {
-    return currentStyles;
+    return currentStyles
   }
 
   return {
@@ -53,6 +53,6 @@ export function mergeStyles(currentStyles, newStyles) {
     errorMessage: { ...currentStyles.errorMessage, ...newStyles.errorMessage },
     componentStack: { ...currentStyles.componentStack, ...newStyles.componentStack },
     browserInfo: { ...currentStyles.browserInfo, ...newStyles.browserInfo },
-    arrow: { ...currentStyles.arrow, ...newStyles.arrow },
+    arrow: { ...currentStyles.arrow, ...newStyles.arrow }
   }
 }

@@ -1,5 +1,5 @@
-import { detect } from 'detect-browser';
+import { detect } from 'detect-browser'
 
-const browserInfo = detect();
+const browserInfo = detect()
 
-export default browserInfo;
+export default browserInfo

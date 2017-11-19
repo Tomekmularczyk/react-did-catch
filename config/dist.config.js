@@ -1,17 +1,17 @@
-const path = require('path');
-const packageName = require('../package.json').name;
+const path = require('path')
+const packageName = require('../package.json').name
 
 module.exports = {
 
   entry: {
-    index: './src/index.js',
+    index: './src/index.js'
   },
 
   output: {
     path: path.resolve(__dirname, '../lib'),
     filename: '[name].js',
     library: packageName,
-    libraryTarget: 'umd',
+    libraryTarget: 'umd'
   },
 
   module: {
@@ -23,8 +23,8 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              cacheDirectory: true,
-            },
+              cacheDirectory: true
+            }
           }
         ]
       }
@@ -32,7 +32,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx']
   },
 
   externals: [
@@ -60,5 +60,5 @@ module.exports = {
         amd: 'detect-browser'
       }
     }
-  ],
-};
+  ]
+}
