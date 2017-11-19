@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ErrorMessage /> matches snapshots 1`] = `
+<div
+  style={
+    Object {
+      "color": "black",
+      "fontSize": "1rem",
+      "margin": "auto",
+      "textAlign": "left",
+      "whiteSpace": "pre-line",
+    }
+  }
+>
+  <h5
+    onClick={[Function]}
+    style={
+      Object {
+        "cursor": "pointer",
+        "margin": "0",
+      }
+    }
+  >
+    Error: Error happened
+    <span
+      style={
+        Object {
+          "fontWeight": "normal",
+        }
+      }
+    >
+      (
+      Chrome 60.0.0.1
+      )
+    </span>
+    <div
+      style={
+        Object {
+          "borderColor": "transparent transparent black transparent",
+          "borderStyle": "solid",
+          "borderWidth": "0 5px 5px 5px",
+          "display": "inline-block",
+          "height": "0",
+          "margin": "auto auto auto 5px",
+          "transition": "transform .3s ease",
+          "verticalAlign": "middle",
+          "width": "0",
+        }
+      }
+    />
+  </h5>
+  <Collapsible
+    isExpanded={false}
+  >
+    <div
+      style={
+        Object {
+          "fontSize": ".8rem",
+          "margin": "0",
+          "overflow": "scroll",
+        }
+      }
+    >
+      Error in
+TestComponent ...
+    </div>
+  </Collapsible>
+</div>
+`;

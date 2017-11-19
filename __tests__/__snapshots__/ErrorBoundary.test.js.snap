@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ErrorBoundary /> matches snapshots 1`] = `"children"`;
+
+exports[`<ErrorBoundary /> matches snapshots 2`] = `
+<ErrorMessage
+  error={[Error]}
+  info={
+    Object {
+      "componentStack": "",
+    }
+  }
+/>
+`;

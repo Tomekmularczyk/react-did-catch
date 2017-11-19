@@ -57,7 +57,8 @@
       "describe",
       "it",
       "expect",
-      "beforeEach"
+      "beforeEach",
+      "jest"
     ]
   },
   "jest": {
